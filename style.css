@@ -33,11 +33,18 @@ button{
 
 .text-box{
     border: 0;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
     margin-inline: 10px;
+    width: 14ch;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
 }
 
 textarea:focus, input:focus{
+    outline: none;
+}
+
+button:focus, input:focus{
     outline: none;
 }
 
@@ -56,4 +63,22 @@ i{
 
 .disappear{
     visibility: hidden;
+}
+
+.weather{
+    font-size: 45px;
+    font-weight: 900;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.mm-hum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 600;
+    width: 250px;
+    margin-left: 25px;
 }
