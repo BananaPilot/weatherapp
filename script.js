@@ -16,6 +16,8 @@ serchButton.addEventListener('click', () =>{
     if (cityname === ""){
         clear()
         disappear.style.visibility = 'hidden';
+        displaytwo.style.display = 'none'
+        mmhum.style.display = 'none'
         box.style.height = '60px';
         return;
     }
