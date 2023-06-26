@@ -2,6 +2,7 @@ let serchButton = document.querySelector("button")
 let box = document.querySelector('.container')
 let disappear = document.querySelector('.disappear')
 let display = document.querySelector(".weather")
+let displaytwo = document.querySelector(".weather-c")
 let mmhum = document.querySelector(".mm-hum")
 let max = document.getElementById("max")
 let hum = document.getElementById("hum")
@@ -24,16 +25,15 @@ serchButton.addEventListener('click', () =>{
             clear()
             box.style.height = '400px'
             disappear.style.visibility = 'visible'
-            display.style.display = 'none'
+            displaytwo.style.display = 'none'
             mmhum.style.display = 'none'
             return
         }
         if(data.cod != "404"){
             disappear.style.visibility = 'hidden'
-            display.style.display = 'flex'
+            displaytwo.style.display = 'flex'
             mmhum.style.display = 'flex'
             box.style.height = '400px'
-            console.log(data);
             display.innerText = data.main.temp.toFixed(0) + " °C"
             max.innerText = data.main.temp_max.toFixed(0) + " °C"
             hum.innerText = data.main.humidity + " %"
