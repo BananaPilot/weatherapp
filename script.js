@@ -16,7 +16,7 @@ geoButton.addEventListener('click', () =>{
         let APIK = "6aedb38ec1a7ba4eecfcaa6a13244fa2"
         let cityname = ""
 
-        fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${APIK}`).then(response => response.json()).then(data =>{
+        fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${APIK}`).then(response => response.json()).then(data =>{
             if(data.cod != "404"){
                 let objdata = data[0]
                 cityname = objdata.name
