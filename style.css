@@ -28,7 +28,7 @@ body{
 button{
     border: 0;
     border-radius: 100%;
-    padding: 9px;
+    padding: 12px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);;
 }
@@ -103,4 +103,8 @@ i{
     display: flex;
     flex-direction: row;
     margin-inline: 20px;
+}
+
+.geolocation{
+    padding-inline: 13px;
 }

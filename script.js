@@ -1,4 +1,5 @@
-let serchButton = document.querySelector("button")
+let serchButton = document.querySelector(".search")
+let geoButton = document.querySelector(".geolocation")
 let box = document.querySelector('.container')
 let disappear = document.querySelector('.disappear')
 let display = document.querySelector(".weather")
@@ -8,6 +9,22 @@ let max = document.getElementById("max")
 let hum = document.getElementById("hum")
 let min = document.getElementById("min")
 
+geoButton.addEventListener('click', () =>{
+    navigator.geolocation.getCurrentPosition((position) =>{
+        let lon = position.coords.longitude
+        let lat = position.coords.latitude
+        let APIK = "6aedb38ec1a7ba4eecfcaa6a13244fa2"
+        let cityname = ""
+
+        fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${APIK}`).then(response => response.json()).then(data =>{
+            if(data.cod != "404"){
+                let objdata = data[0]
+                cityname = objdata.name
+                document.getElementById('text-box').value = cityname
+            }
+        })
+    }) 
+})
 
 serchButton.addEventListener('click', () =>{
     let APIK = "6aedb38ec1a7ba4eecfcaa6a13244fa2"
