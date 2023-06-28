@@ -1,4 +1,5 @@
 let serchButton = document.querySelector(".search")
+let mainweathericon = document.getElementById('mainweather')
 let geoButton = document.querySelector(".geolocation")
 let box = document.querySelector('.container')
 let disappear = document.querySelector('.disappear')
@@ -8,6 +9,20 @@ let mmhum = document.querySelector(".mm-hum")
 let max = document.getElementById("max")
 let hum = document.getElementById("hum")
 let min = document.getElementById("min")
+
+//https://openweathermap.org/weather-conditions
+
+const weatherstatus = {
+    ebdb : [200, 299], //tunder
+    f61e : [300, 504], //light rain
+    f61d : [511, 511], //frozenrain
+    f61f : [520, 531], //heavy rain
+    eb3b : [600, 699], //snow
+    f076 : [700, 799], // thermostat
+    e81a : [800, 800], // sunny
+    f172 : [801, 801], // sunnywithclouds
+    f15b : [802, 804], // clouds
+}
 
 geoButton.addEventListener('click', () =>{
     navigator.geolocation.getCurrentPosition((position) =>{
@@ -50,6 +65,8 @@ serchButton.addEventListener('click', () =>{
             return
         }
         if(data.cod != "404"){
+            weatherID = data.weather[0].id  
+            mainweathericon.innerHTML = '&#x' + getweathercode(weatherID) + ';'
             disappear.style.visibility = 'hidden'
             displaytwo.style.display = 'flex'
             mmhum.style.display = 'flex'
@@ -63,9 +80,22 @@ serchButton.addEventListener('click', () =>{
     })
 })
 
-function clear(){
+function clear() {
     display.innerText = ""
     min.innerText = ""
     hum.innerText = ""
     max.innerText = ""
+}
+
+function getweathercode(weatherID) {
+    let iconCode = ''
+    for (const key in weatherstatus ) {
+        let min = weatherstatus[key][0]
+        let max = weatherstatus[key][1]
+        if (weatherID >= min && weatherID <= max){
+            iconCode = key
+            break;
+        }
+    }
+    return iconCode;
 }
