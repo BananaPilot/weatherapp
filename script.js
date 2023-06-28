@@ -44,6 +44,7 @@ serchButton.addEventListener('click', () =>{
             clear()
             box.style.height = '400px'
             disappear.style.visibility = 'visible'
+            disappear.style.display = 'contents'
             displaytwo.style.display = 'none'
             mmhum.style.display = 'none'
             return

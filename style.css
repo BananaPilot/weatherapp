@@ -65,7 +65,8 @@ i{
 }
 
 .disappear{
-    visibility: hidden;
+    visibility: visible;
+    display: none;
 }
 
 .weather-c{
