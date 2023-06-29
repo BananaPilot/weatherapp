@@ -78,6 +78,7 @@ button:focus, input:focus{
 }
 
 button:hover{
+    transition: 500ms;
     transform: translateY(-2px);
     background-color: hsla(0, 0%, 100%, 0.2);
 }
@@ -89,7 +90,7 @@ i{
 .errorimg{
     width: 300px;
     margin-top: 10px;
-    animation: fadeIn 1s;
+    animation: fadeIn 500ms;
 }
 
 .disappear{
@@ -104,7 +105,7 @@ i{
     display: none;
     justify-content: center;
     flex-direction: column;
-    animation: fadeIn 1s;
+    animation: fadeIn 500ms;
 }
 
 .mm-hum{
@@ -114,7 +115,7 @@ i{
     width: 400px;
     margin-left: 25px;
     display: none;
-    animation: fadeIn 1s;
+    animation: fadeIn 500ms;
 }
 
 .max{
