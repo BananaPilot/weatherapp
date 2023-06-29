@@ -9,6 +9,7 @@ let mmhum = document.querySelector(".mm-hum")
 let max = document.getElementById("max")
 let hum = document.getElementById("hum")
 let min = document.getElementById("min")
+let textbox = document.getElementById('text-box')
 
 //https://openweathermap.org/weather-conditions
 
@@ -39,6 +40,12 @@ geoButton.addEventListener('click', () =>{
             }
         })
     }) 
+})
+
+textbox.addEventListener('keyup', (buttonclick) =>{
+    if(buttonclick.keyCode === 13){
+        serchButton.click()
+    }
 })
 
 serchButton.addEventListener('click', () =>{
