@@ -25,6 +25,10 @@ const weatherstatus = {
     f15b : [802, 804], // clouds
 }
 
+window.addEventListener('load', () =>{
+    geoButton.click()
+})
+
 geoButton.addEventListener('click', () =>{
     navigator.geolocation.getCurrentPosition((position) =>{
         let lon = position.coords.longitude
@@ -37,6 +41,7 @@ geoButton.addEventListener('click', () =>{
                 let objdata = data[0]
                 cityname = objdata.name
                 document.getElementById('text-box').value = cityname
+                serchButton.click()
             }
         })
     }) 
@@ -87,6 +92,7 @@ serchButton.addEventListener('click', () =>{
         }
     })
 })
+
 
 function clear() {
     display.innerText = ""
