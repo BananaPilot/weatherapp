@@ -27,6 +27,7 @@ body{
     width: 400px;
     height: 60px;
     border-radius: 15px;
+    transition: 1s;
 }
 
 @keyframes gradient {
