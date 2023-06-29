@@ -71,24 +71,29 @@ serchButton.addEventListener('click', () =>{
         if(data.cod === "404"){
             clear()
             box.style.height = '400px'
-            disappear.style.visibility = 'visible'
-            disappear.style.display = 'contents'
             displaytwo.style.display = 'none'
             mmhum.style.display = 'none'
+            setTimeout(() => {
+                disappear.style.visibility = 'visible'
+                disappear.style.display = 'contents'
+            }, 800);
             return
         }
         if(data.cod != "404"){
-            weatherID = data.weather[0].id  
-            mainweathericon.innerHTML = '&#x' + getweathercode(weatherID) + ';'
-            disappear.style.visibility = 'hidden'
-            displaytwo.style.display = 'flex'
-            mmhum.style.display = 'flex'
+            box.classList.toggle('translate')
             box.style.height = '400px'
-            display.innerText = data.main.temp.toFixed(0) + " °C"
-            max.innerText = data.main.temp_max.toFixed(0) + " °C"
-            hum.innerText = data.main.humidity + " %"
-            min.innerText = data.main.temp_min.toFixed(0) + " °C"
-            return
+            setTimeout(() => {
+                weatherID = data.weather[0].id  
+                mainweathericon.innerHTML = '&#x' + getweathercode(weatherID) + ';'
+                disappear.style.visibility = 'hidden'
+                displaytwo.style.display = 'flex'
+                mmhum.style.display = 'flex'
+                display.innerText = data.main.temp.toFixed(0) + " °C"
+                max.innerText = data.main.temp_max.toFixed(0) + " °C"
+                hum.innerText = data.main.humidity + " %"
+                min.innerText = data.main.temp_min.toFixed(0) + " °C"
+                return
+            }, 800);
         }
     })
 })

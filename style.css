@@ -1,5 +1,6 @@
 *{
     font-family: 'Montserrat', sans-serif;
+    transition: 1s;
 }
 
 body{
@@ -23,6 +24,15 @@ body{
     width: 400px;
     height: 60px;
     border-radius: 15px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.translate{
+    transform: 1s;
 }
 
 button{
@@ -52,7 +62,8 @@ button:focus, input:focus{
 }
 
 button:hover{
-    background-color: rgba(211, 211, 211, 0.593);
+    transform: translateY(-2px);
+    background-color: hsla(0, 0%, 100%, 0.2);
 }
 
 i{
@@ -62,6 +73,7 @@ i{
 .errorimg{
     width: 300px;
     margin-top: 10px;
+    animation: fadeIn 1s;
 }
 
 .disappear{
@@ -76,7 +88,7 @@ i{
     display: none;
     justify-content: center;
     flex-direction: column;
-
+    animation: fadeIn 1s;
 }
 
 .mm-hum{
@@ -86,6 +98,7 @@ i{
     width: 400px;
     margin-left: 25px;
     display: none;
+    animation: fadeIn 1s;
 }
 
 .max{
