@@ -42,8 +42,9 @@ geoButton.addEventListener('click', () =>{
     }) 
 })
 
-textbox.addEventListener('keyup', (buttonclick) =>{
-    if(buttonclick.keyCode === 13){
+
+window.addEventListener('keyup', (enter) =>{
+    if(enter.keyCode === 13){
         serchButton.click()
     }
 })
