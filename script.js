@@ -10,9 +10,6 @@ let max = document.getElementById("max")
 let hum = document.getElementById("hum")
 let min = document.getElementById("min")
 let textbox = document.getElementById('text-box')
-import './node_modules/dotenv/config.js'
-require('dotenv').config()
-console.log(process.env.API_KEY);
 
 //https://openweathermap.org/weather-conditions
 
