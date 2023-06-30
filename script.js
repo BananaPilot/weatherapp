@@ -11,7 +11,6 @@ let hum = document.getElementById("hum")
 let min = document.getElementById("min")
 let textbox = document.getElementById('text-box')
 
-
 //https://openweathermap.org/weather-conditions
 
 const weatherstatus = {
@@ -32,6 +31,7 @@ window.addEventListener('load', () =>{
 
 geoButton.addEventListener('click', () =>{
     navigator.geolocation.getCurrentPosition((position) =>{
+        let APIK = '6aedb38ec1a7ba4eecfcaa6a13244fa2'
         let lon = position.coords.longitude
         let lat = position.coords.latitude
         let cityname = ""
@@ -55,6 +55,7 @@ window.addEventListener('keyup', (enter) =>{
 })
 
 serchButton.addEventListener('click', () =>{
+    let APIK = '6aedb38ec1a7ba4eecfcaa6a13244fa2'
     let cityname = document.getElementById('text-box').value
     if (cityname === ""){
         clear()
