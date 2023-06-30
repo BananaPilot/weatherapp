@@ -12,6 +12,7 @@ let min = document.getElementById("min")
 let textbox = document.getElementById('text-box')
 
 
+
 //https://openweathermap.org/weather-conditions
 
 const weatherstatus = {
