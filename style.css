@@ -90,7 +90,7 @@ i{
 .errorimg{
     width: 300px;
     margin-top: 10px;
-    animation: fadeIn 1200ms;
+    animation: fadeIn 1s;
 }
 
 .disappear{
